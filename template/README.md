@@ -53,7 +53,7 @@ Le package est hébergé sur GitHub Packages. Ajoute cette ligne à ton `~/.npmr
 ## 2 — Créer un projet
 
 ```bash
-npx @samy-clivolt/create-pi-ag-ui my-app
+npx @snguesssan/create-pi-ag-ui my-app
 ```
 
 Le CLI te demandera quel package manager utiliser (npm, pnpm, yarn ou bun), puis installera les dépendances automatiquement.
@@ -62,13 +62,13 @@ Le CLI te demandera quel package manager utiliser (npm, pnpm, yarn ou bun), puis
 
 ```bash
 # Choisir pnpm directement
-npx @samy-clivolt/create-pi-ag-ui my-app --pm pnpm
+npx @snguesssan/create-pi-ag-ui my-app --pm pnpm
 
 # Ne pas installer les dépendances (tu le feras toi-même)
-npx @samy-clivolt/create-pi-ag-ui my-app --skip-install
+npx @snguesssan/create-pi-ag-ui my-app --skip-install
 
 # Aide
-npx @samy-clivolt/create-pi-ag-ui --help
+npx @snguesssan/create-pi-ag-ui --help
 ```
 
 ---
