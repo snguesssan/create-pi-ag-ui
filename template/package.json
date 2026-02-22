@@ -1,0 +1,42 @@
+{
+  "name": "pi-ag-ui-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbo --port 3000",
+    "dev:webpack": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "ci": "npm run lint && npm run typecheck && npm run build"
+  },
+  "dependencies": {
+    "@samy-clivolt/pi-ag-ui": "^0.1.0",
+    "@copilotkit/react-core": "^1.51.0",
+    "@copilotkit/react-ui": "^1.51.0",
+    "@copilotkit/runtime": "^1.51.3",
+    "@ag-ui/client": "0.0.43",
+    "@ag-ui/core": "0.0.43",
+    "@mariozechner/pi-ai": "^0.52.12",
+    "@mariozechner/pi-coding-agent": "^0.52.12",
+    "@sinclair/typebox": "^0.34.48",
+    "fast-json-patch": "^3.1.1",
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-markdown": "^9.0.0",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "^15.5.12",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.6.0"
+  }
+}

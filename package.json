@@ -1,0 +1,40 @@
+{
+  "name": "@snguesssan/create-pi-ag-ui",
+  "version": "1.0.0",
+  "description": "Create a Pi AG-UI project — Next.js + CopilotKit + Pi SDK",
+  "license": "MIT",
+  "author": "snguesssan",
+  "bin": {
+    "create-pi-ag-ui": "bin/create-pi-ag-ui.js",
+    "@snguesssan/create-pi-ag-ui": "bin/create-pi-ag-ui.js"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "template/"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "create",
+    "pi",
+    "ag-ui",
+    "copilotkit",
+    "nextjs",
+    "ai-agent",
+    "scaffold"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snguesssan/create-pi-ag-ui"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "picocolors": "^1.1.1",
+    "prompts": "^2.4.2"
+  }
+}

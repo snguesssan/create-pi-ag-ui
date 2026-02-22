@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0f0f1a;
+  --foreground: #e4e4ef;
+  --accent: #3b82f6;
+  --surface: #1e1e32;
+  --border: #2a2a4a;
+}
+
+/* Light theme */
+:root.light {
+  --background: #f8f9fa;
+  --foreground: #1a1a2e;
+  --accent: #2563eb;
+  --surface: #ffffff;
+  --border: #e0e0e8;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, sans-serif;
+  transition: background 0.3s, color 0.3s;
+  min-height: 100dvh;
+  overscroll-behavior-y: none;
+}
+
+/* ── CopilotKit dark theme (default) ── */
+.copilotKitChat {
+  --copilot-kit-background-color: var(--background);
+  --copilot-kit-input-background-color: var(--surface);
+  --copilot-kit-primary-color: var(--accent);
+  --copilot-kit-contrast-color: #ffffff;
+  --copilot-kit-secondary-color: var(--surface);
+  --copilot-kit-secondary-contrast-color: var(--foreground);
+  --copilot-kit-separator-color: var(--border);
+  --copilot-kit-muted-color: #6b6b8a;
+  --copilot-kit-error-background: #3b1111;
+  --copilot-kit-error-border: #dc2626;
+  --copilot-kit-error-text: #fca5a5;
+  --copilot-kit-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --copilot-kit-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.5);
+  --copilot-kit-shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.5);
+
+  /* Ensure chat fills container and scrolls properly */
+  height: 100% !important;
+  max-height: 100% !important;
+  overflow: hidden !important;
+}
+
+/* Light overrides for CopilotKit */
+:root.light .copilotKitChat {
+  --copilot-kit-contrast-color: #ffffff;
+  --copilot-kit-muted-color: #9ca3af;
+  --copilot-kit-error-background: #fef2f2;
+  --copilot-kit-error-border: #fecaca;
+  --copilot-kit-error-text: #dc2626;
+  --copilot-kit-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --copilot-kit-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --copilot-kit-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth scroll for chat messages */
+.copilotKitMessages {
+  scroll-behavior: smooth;
+}
+
+/* Notification slide-in animation */
+@keyframes slide-in {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+/* Indeterminate progress for long-running tool/activity states */
+@keyframes agui-indeterminate {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(220%);
+  }
+}
+
+.agui-indeterminate-track {
+  position: relative;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.agui-indeterminate-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 35%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.9), rgba(59, 130, 246, 0.2));
+  animation: agui-indeterminate 1.2s ease-in-out infinite;
+}
+
+/* Mobile UX polish (Phase 5.5) */
+@media (max-width: 1023px) {
+  .agui-mobile-chat button,
+  .agui-mobile-chat select,
+  .agui-mobile-chat input,
+  .agui-mobile-chat textarea {
+    min-height: 40px;
+  }
+
+  .agui-mobile-chat textarea,
+  .agui-mobile-chat input {
+    font-size: 16px;
+  }
+
+  .agui-mobile-chat .copilotKitInput {
+    padding-bottom: max(0.25rem, env(safe-area-inset-bottom));
+  }
+}

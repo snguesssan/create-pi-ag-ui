@@ -1,0 +1,19 @@
+# List available commands
+default:
+    @just --list
+
+# Start the Next.js dev server
+dev:
+    npm run dev
+
+# Build for production
+build:
+    npm run build
+
+# TypeScript check
+typecheck:
+    npx tsc --noEmit
+
+# Run full CI checks (lint + typecheck + test + build)
+verify:
+    npm run ci
